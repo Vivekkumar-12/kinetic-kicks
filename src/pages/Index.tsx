@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import FeaturedSection from "@/components/FeaturedSection";
 import Footer from "@/components/Footer";
+import StarsBackground from "@/components/StarsBackground";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,6 +31,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <StarsBackground />
       <Navigation />
       <Hero />
       <FeaturedSection />

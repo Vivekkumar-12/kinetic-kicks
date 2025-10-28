@@ -8,6 +8,43 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 7%;
+
+    --popover: 0 0% 98%;
+    --popover-foreground: 0 0% 7%;
+
+    --primary: 16 100% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 213 94% 68%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 16 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 16 100% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradients */
+    --gradient-fire: linear-gradient(135deg, hsl(16 100% 60%), hsl(0 100% 50%));
+    --gradient-ocean: linear-gradient(135deg, hsl(213 94% 68%), hsl(268 94% 68%));
+    --gradient-dark: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 96%));
+  }
+
+  .dark {
     --background: 0 0% 7%;
     --foreground: 0 0% 98%;
 
@@ -36,11 +73,6 @@ All colors MUST be HSL.
     --input: 0 0% 20%;
     --ring: 16 100% 60%;
 
-    --radius: 0.75rem;
-
-    /* Custom gradients */
-    --gradient-fire: linear-gradient(135deg, hsl(16 100% 60%), hsl(0 100% 50%));
-    --gradient-ocean: linear-gradient(135deg, hsl(213 94% 68%), hsl(268 94% 68%));
     --gradient-dark: linear-gradient(180deg, hsl(0 0% 7%), hsl(0 0% 12%));
   }
 }

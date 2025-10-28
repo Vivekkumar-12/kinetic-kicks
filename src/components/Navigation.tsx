@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag, Menu, X, Search } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,7 +17,12 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = ["New Releases", "Men", "Women", "Kids", "Sale"];
+  const navLinks = [
+    { name: "Men", path: "/men" },
+    { name: "Women", path: "/women" },
+    { name: "Kids", path: "/kids" },
+    { name: "Sale", path: "/sale" },
+  ];
 
   return (
     <nav
@@ -29,27 +36,29 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-3xl font-black bg-gradient-fire bg-clip-text text-transparent">
-              STRIDE
-            </h1>
+            <Link to="/">
+              <h1 className="text-3xl font-black bg-gradient-fire bg-clip-text text-transparent cursor-pointer">
+                STRIDE
+              </h1>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
-                key={link}
-                href="#"
+              <Link
+                key={link.name}
+                to={link.path}
                 className="text-foreground/80 hover:text-primary font-semibold transition-colors relative group"
               >
-                {link}
+                {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-fire group-hover:w-full transition-all duration-300" />
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* Actions */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2">
             <Button
               variant="ghost"
               size="icon"
@@ -57,6 +66,7 @@ const Navigation = () => {
             >
               <Search className="h-5 w-5" />
             </Button>
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
@@ -89,14 +99,20 @@ const Navigation = () => {
           <div className="lg:hidden py-6 border-t border-border animate-slide-up">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
-                <a
-                  key={link}
-                  href="#"
-                  className="text-foreground font-semibold hover:text-primary transition-colors py-2"
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className="text-foreground font-semibold hover:text-primary transition-colors py-2 px-4"
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {link}
-                </a>
+                  {link.name}
+                </Link>
               ))}
+              <div className="px-4 pt-4 border-t border-border">
+                <Button className="w-full bg-gradient-fire hover:opacity-90 transition-opacity">
+                  Shop Now
+                </Button>
+              </div>
             </div>
           </div>
         )}

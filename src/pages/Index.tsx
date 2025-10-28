@@ -1,12 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
+import FeaturedSection from "@/components/FeaturedSection";
+import Footer from "@/components/Footer";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Index = () => {
+  useEffect(() => {
+    // Smooth scroll setup
+    const lenis = {
+      scrollTo: (target: number) => {
+        window.scrollTo({
+          top: target,
+          behavior: "smooth",
+        });
+      },
+    };
+
+    // Update ScrollTrigger on scroll
+    ScrollTrigger.refresh();
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      <Hero />
+      <FeaturedSection />
+      <Footer />
     </div>
   );
 };

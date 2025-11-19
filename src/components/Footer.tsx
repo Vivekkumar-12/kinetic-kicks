@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Facebook, Instagram, Twitter, Youtube, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const footerSections = [
@@ -21,7 +21,7 @@ const Footer = () => {
     { icon: Instagram, href: "https://www.instagram.com/vivek__kumar__14_/?hl=en" },
     { icon: Twitter, href: "https://x.com/Vivek0897" },
     { icon: Youtube, href: "https://www.youtube.com/@randhirkumar8542" },
-    {icon: Linkedin, href="https://www.linkedin.com/in/vivek-kumar-b19aa5299/" }
+    { icon: Linkedin, href: "https://www.linkedin.com/in/vivek-kumar-b19aa5299/" }
   ];
 
   return (

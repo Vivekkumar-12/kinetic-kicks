@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import FeaturedSection from "@/components/FeaturedSection";
 import Footer from "@/components/Footer";
 import StarsBackground from "@/components/StarsBackground";
+import ChatBot from "@/components/ChatBot";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,6 +37,7 @@ const Index = () => {
       <Hero />
       <FeaturedSection />
       <Footer />
+      <ChatBot />
     </div>
   );
 };

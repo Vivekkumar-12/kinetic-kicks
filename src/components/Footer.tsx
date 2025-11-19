@@ -17,10 +17,11 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#" },
-    { icon: Instagram, href: "#" },
-    { icon: Twitter, href: "#" },
-    { icon: Youtube, href: "#" },
+    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=100080085475262x" },
+    { icon: Instagram, href: "https://www.instagram.com/vivek__kumar__14_/?hl=en" },
+    { icon: Twitter, href: "https://x.com/Vivek0897" },
+    { icon: Youtube, href: "https://www.youtube.com/@randhirkumar8542" },
+    {icon: Linkedin, href="https://www.linkedin.com/in/vivek-kumar-b19aa5299/" }
   ];
 
   return (

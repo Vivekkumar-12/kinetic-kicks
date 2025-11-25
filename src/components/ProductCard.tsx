@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,11 +12,23 @@ interface ProductCardProps {
   name: string;
   category: string;
   price: string;
+  originalPrice?: string;
   index: number;
 }
 
-const ProductCard = ({ image, name, category, price, index }: ProductCardProps) => {
+const ProductCard = ({ image, name, category, price, originalPrice, index }: ProductCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
+  const { addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: `${name}-${index}`,
+      image,
+      name,
+      category,
+      price,
+    });
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -52,11 +65,12 @@ const ProductCard = ({ image, name, category, price, index }: ProductCardProps) 
         {/* Quick add button - appears on hover */}
         <div className="absolute inset-x-0 bottom-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
           <Button
+            onClick={handleAddToCart}
             className="w-full bg-foreground text-background hover:bg-primary hover:text-primary-foreground rounded-full font-bold"
             size="lg"
           >
             <ShoppingCart className="mr-2 h-5 w-5" />
-            Quick Add
+            Add to Cart
           </Button>
         </div>
       </div>
@@ -69,7 +83,12 @@ const ProductCard = ({ image, name, category, price, index }: ProductCardProps) 
         <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
           {name}
         </h3>
-        <p className="text-3xl font-black text-primary">{price}</p>
+        <div className="flex items-center gap-3">
+          <p className="text-3xl font-black text-primary">{price}</p>
+          {originalPrice && (
+            <p className="text-xl text-muted-foreground line-through">{originalPrice}</p>
+          )}
+        </div>
       </div>
 
       {/* Hover gradient effect */}

@@ -8,12 +8,12 @@ import women2 from "@/assets/women-2.jpg";
 import women3 from "@/assets/women-3.jpg";
 
 const products = [
-  { image: women1, name: "Grace Runner", category: "Running", price: "$159" },
-  { image: women2, name: "Aurora Sprint", category: "Running", price: "$169" },
-  { image: women3, name: "Elegance Walk", category: "Lifestyle", price: "$149" },
-  { image: women1, name: "Flex Motion", category: "Training", price: "$139" },
-  { image: women2, name: "Power Stride", category: "Running", price: "$179" },
-  { image: women3, name: "Urban Chic", category: "Lifestyle", price: "$155" },
+  { image: women1, name: "Grace Runner", category: "Running", price: "₹12,999" },
+  { image: women2, name: "Aurora Sprint", category: "Running", price: "₹13,899" },
+  { image: women3, name: "Elegance Walk", category: "Lifestyle", price: "₹12,199" },
+  { image: women1, name: "Flex Motion", category: "Training", price: "₹11,399" },
+  { image: women2, name: "Power Stride", category: "Running", price: "₹14,699" },
+  { image: women3, name: "Urban Chic", category: "Lifestyle", price: "₹12,699" },
 ];
 
 const Women = () => {

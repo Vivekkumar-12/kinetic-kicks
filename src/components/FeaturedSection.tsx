@@ -13,19 +13,19 @@ const products = [
     image: shoe1,
     name: "Air Velocity Pro",
     category: "Running",
-    price: "$159",
+    price: "₹12,999",
   },
   {
     image: shoe2,
     name: "Court Dominator",
     category: "Basketball",
-    price: "$189",
+    price: "₹15,499",
   },
   {
     image: shoe3,
     name: "Urban Explorer",
     category: "Lifestyle",
-    price: "$139",
+    price: "₹11,399",
   },
 ];
 

@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag, Menu, X, Search } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { useCart } from "@/contexts/CartContext";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { totalItems } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,16 +69,20 @@ const Navigation = () => {
               <Search className="h-5 w-5" />
             </Button>
             <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="icon"
-              className="hover:bg-primary/10 relative"
-            >
-              <ShoppingBag className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
-                3
-              </span>
-            </Button>
+            <Link to="/cart">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="hover:bg-primary/10 relative"
+              >
+                <ShoppingBag className="h-5 w-5" />
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
+                    {totalItems}
+                  </span>
+                )}
+              </Button>
+            </Link>
 
             {/* Mobile menu button */}
             <Button

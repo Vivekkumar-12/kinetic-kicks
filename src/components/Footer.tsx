@@ -1,18 +1,37 @@
 import { Facebook, Instagram, Twitter, Youtube, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const footerSections = [
     {
       title: "Shop",
-      links: ["New Releases", "Men", "Women", "Kids", "Sale"],
+      links: [
+        { name: "New Releases", path: "/" },
+        { name: "Men", path: "/men" },
+        { name: "Women", path: "/women" },
+        { name: "Kids", path: "/kids" },
+        { name: "Sale", path: "/sale" },
+      ],
     },
     {
       title: "Support",
-      links: ["Contact Us", "Shipping", "Returns", "Size Guide", "FAQ"],
+      links: [
+        { name: "Contact Us", path: "#" },
+        { name: "Shipping", path: "#" },
+        { name: "Returns", path: "#" },
+        { name: "Size Guide", path: "#" },
+        { name: "FAQ", path: "#" },
+      ],
     },
     {
       title: "Company",
-      links: ["About Us", "Careers", "Sustainability", "Press", "Stores"],
+      links: [
+        { name: "About Us", path: "#" },
+        { name: "Careers", path: "#" },
+        { name: "Sustainability", path: "#" },
+        { name: "Press", path: "#" },
+        { name: "Stores", path: "#" },
+      ],
     },
   ];
 
@@ -60,13 +79,22 @@ const Footer = () => {
               </h3>
               <ul className="space-y-3">
                 {section.links.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      {link}
-                    </a>
+                  <li key={link.name}>
+                    {link.path.startsWith("#") ? (
+                      <a
+                        href={link.path}
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.path}
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

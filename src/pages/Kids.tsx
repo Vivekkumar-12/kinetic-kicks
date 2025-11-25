@@ -8,12 +8,12 @@ import kids2 from "@/assets/kids-2.jpg";
 import kids3 from "@/assets/kids-3.jpg";
 
 const products = [
-  { image: kids1, name: "Junior Flash", category: "Kids Running", price: "$79" },
-  { image: kids2, name: "Youth Champion", category: "Kids Sports", price: "$89" },
-  { image: kids3, name: "Little Star", category: "Kids Casual", price: "$69" },
-  { image: kids1, name: "Speed Dash", category: "Kids Running", price: "$85" },
-  { image: kids2, name: "Play Pro", category: "Kids Sports", price: "$79" },
-  { image: kids3, name: "Fun Step", category: "Kids Casual", price: "$75" },
+  { image: kids1, name: "Junior Flash", category: "Kids Running", price: "₹6,499" },
+  { image: kids2, name: "Youth Champion", category: "Kids Sports", price: "₹7,299" },
+  { image: kids3, name: "Little Star", category: "Kids Casual", price: "₹5,699" },
+  { image: kids1, name: "Speed Dash", category: "Kids Running", price: "₹6,999" },
+  { image: kids2, name: "Play Pro", category: "Kids Sports", price: "₹6,499" },
+  { image: kids3, name: "Fun Step", category: "Kids Casual", price: "₹6,199" },
 ];
 
 const Kids = () => {

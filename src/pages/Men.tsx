@@ -11,12 +11,12 @@ import shoe2 from "@/assets/shoe-2.jpg";
 import shoe3 from "@/assets/shoe-3.jpg";
 
 const products = [
-  { image: men1, name: "Velocity Runner", category: "Running", price: "$169" },
-  { image: men2, name: "Elite Champion", category: "Basketball", price: "$199" },
-  { image: men3, name: "Power Trainer", category: "Training", price: "$149" },
-  { image: shoe1, name: "Air Flow Pro", category: "Running", price: "$159" },
-  { image: shoe2, name: "Court Master", category: "Basketball", price: "$189" },
-  { image: shoe3, name: "Urban Edge", category: "Lifestyle", price: "$139" },
+  { image: men1, name: "Velocity Runner", category: "Running", price: "₹13,899" },
+  { image: men2, name: "Elite Champion", category: "Basketball", price: "₹16,299" },
+  { image: men3, name: "Power Trainer", category: "Training", price: "₹12,199" },
+  { image: shoe1, name: "Air Flow Pro", category: "Running", price: "₹12,999" },
+  { image: shoe2, name: "Court Master", category: "Basketball", price: "₹15,499" },
+  { image: shoe3, name: "Urban Edge", category: "Lifestyle", price: "₹11,399" },
 ];
 
 const Men = () => {

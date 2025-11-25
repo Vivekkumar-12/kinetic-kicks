@@ -11,12 +11,12 @@ import women1 from "@/assets/women-1.jpg";
 import kids1 from "@/assets/kids-1.jpg";
 
 const products = [
-  { image: shoe1, name: "Air Velocity Pro", category: "Running", price: "$99", originalPrice: "$159" },
-  { image: shoe2, name: "Court Dominator", category: "Basketball", price: "$119", originalPrice: "$189" },
-  { image: shoe3, name: "Urban Explorer", category: "Lifestyle", price: "$89", originalPrice: "$139" },
-  { image: men1, name: "Velocity Runner", category: "Men's Running", price: "$109", originalPrice: "$169" },
-  { image: women1, name: "Grace Runner", category: "Women's Running", price: "$99", originalPrice: "$159" },
-  { image: kids1, name: "Junior Flash", category: "Kids Running", price: "$49", originalPrice: "$79" },
+  { image: shoe1, name: "Air Velocity Pro", category: "Running", price: "₹8,099", originalPrice: "₹12,999" },
+  { image: shoe2, name: "Court Dominator", category: "Basketball", price: "₹9,799", originalPrice: "₹15,499" },
+  { image: shoe3, name: "Urban Explorer", category: "Lifestyle", price: "₹7,299", originalPrice: "₹11,399" },
+  { image: men1, name: "Velocity Runner", category: "Men's Running", price: "₹8,999", originalPrice: "₹13,899" },
+  { image: women1, name: "Grace Runner", category: "Women's Running", price: "₹8,099", originalPrice: "₹12,999" },
+  { image: kids1, name: "Junior Flash", category: "Kids Running", price: "₹4,099", originalPrice: "₹6,499" },
 ];
 
 const Sale = () => {
